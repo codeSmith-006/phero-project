@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phero Project</title>
+
+
+    <!-- Adding inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- adding daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Adding tailwind config and extends fonts and colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ["Inter", "sans-serif"],
+                    },
+                    colors: {
+                        btnRed: "#ff1f3d",
+                        btnAsh: "#dfdfdf"
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+
+    <!-- header section -->
+    <header>
+
+        <!-- navbar section -->
+        <nav class="pt-12 mb-8 container mx-auto ">
+
+            <!-- navbar content -->
+            <div
+                class="flex justify-between items-center pb-8 border-b border-[#171717] border-opacity-20">
+
+                <!-- logo section -->
+                <img src="assets/Logo.png" alt="">
+
+                <!-- sort button -->
+                <button
+                    class="font-inter font-medium text-left text-[252525] text-lg px-5 py-2 bg-btnAsh rounded btn hover:text-black">Sort
+                    by view</button>
+
+                <!-- blog button -->
+                <button
+                    class="font-inter text-lg text-white text-left font-medium px-5 py-2 bg-btnRed rounded btn hover:text-black">Blog</button>
+            </div>
+        </nav>
+
+        <!-- categories section -->
+        <nav class="container mx-auto">
+
+            <!-- nav content -->
+            <div id="btn-container" class="flex gap-6 justify-center items-center">
+
+
+
+                <!-- All button -->
+                 <button id="1001" class="font-inter font-semibold text-white px-5 py-2 bg-btnRed rounded btn text-lg">All</button>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- script files -->
+     <script src="script/categories.js"></script>
+</body>
+
+</html>
