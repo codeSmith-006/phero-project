@@ -18,6 +18,8 @@ const displayVideos = (videos) => {
 
     // fetch the grid container
     const gridContainer = document.getElementById("grid-container");
+    gridContainer.innerHTML = "";
+    document.getElementById("no-content").classList.add("hidden")
 
     for (let video of videos) {
         const gridVideo = document.createElement("div");
@@ -64,4 +66,9 @@ const displayVideos = (videos) => {
     }
 }
 
-getVideo();
+document.getElementById("all").addEventListener("click", () => {
+    getVideo();
+})
+
+
+

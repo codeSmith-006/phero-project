@@ -35,6 +35,13 @@
             },
         };
     </script>
+
+    <style>
+        .active {
+            background-color: #ff1f3d;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -71,8 +78,8 @@
 
 
                 <!-- All button -->
-                <button id="1001"
-                    class="font-inter font-semibold text-white px-5 py-2 bg-btnRed rounded btn text-lg">All</button>
+                <button id="all"
+                    class="font-inter font-semibold  px-5 py-2 rounded btn text-lg cateBtn hover:bg-btnRed hover:text-white">All</button>
 
             </div>
         </nav>
@@ -81,8 +88,15 @@
     <!-- main section / load video section -->
     <main class="container mx-auto mt-10">
 
+        <div id="no-content" class="flex flex-col items-center gap-8 mt-48 justify-center">
+            <img src="assets/Icon.png" alt="">
+
+            <h1 class="font-inter font-bold text-3xl leading-[44px] text-center">Oops!! Sorry, There is no <br> content here</h1>
+        </div>
+
         <!-- main content / video content with grid container -->
         <div id="grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-between">
+
 
         </div>
     </main>
@@ -94,6 +108,9 @@
 
     <!-- fetchVideo file -->
     <script src="script/fetchVideo.js"></script>
+
+    <!-- fetchByCate file -->
+     <script src="script/fetchByCate.js"></script>
 </body>
 
 </html>
