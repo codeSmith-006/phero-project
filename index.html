@@ -46,8 +46,7 @@
         <nav class="pt-12 mb-8 container mx-auto ">
 
             <!-- navbar content -->
-            <div
-                class="flex justify-between items-center pb-8 border-b border-[#171717] border-opacity-20">
+            <div class="flex justify-between items-center pb-8 border-b border-[#171717] border-opacity-20">
 
                 <!-- logo section -->
                 <img src="assets/Logo.png" alt="">
@@ -72,14 +71,29 @@
 
 
                 <!-- All button -->
-                 <button id="1001" class="font-inter font-semibold text-white px-5 py-2 bg-btnRed rounded btn text-lg">All</button>
+                <button id="1001"
+                    class="font-inter font-semibold text-white px-5 py-2 bg-btnRed rounded btn text-lg">All</button>
 
             </div>
         </nav>
     </header>
 
+    <!-- main section / load video section -->
+    <main class="container mx-auto mt-10">
+
+        <!-- main content / video content with grid container -->
+        <div id="grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-between">
+
+        </div>
+    </main>
+
     <!-- script files -->
-     <script src="script/categories.js"></script>
+
+    <!-- categories file -->
+    <script src="script/categories.js"></script>
+
+    <!-- fetchVideo file -->
+    <script src="script/fetchVideo.js"></script>
 </body>
 
 </html>

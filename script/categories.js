@@ -36,8 +36,6 @@ const displayCategory = (categories) => {
         btnContainer.appendChild(container);
     }
 
-
-
 }
 
 getButton();
