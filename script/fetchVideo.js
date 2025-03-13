@@ -1,7 +1,7 @@
 // getting the object of video load 
 const getVideo = async () => {
     try {
-
+        showLoader();
         // fetching the api
         const response = await fetch("https://openapi.programming-hero.com/api/phero-tube/videos");
 
@@ -16,7 +16,7 @@ const getVideo = async () => {
 
 const displayVideos = (videos) => {
 
-    showLoader();
+
 
     // fetch the grid container
     const gridContainer = document.getElementById("grid-container");
@@ -86,6 +86,7 @@ const showDetails = (id) => {
 
 const fetchDetails = async (url) => {
     try {
+        showLoader();
         const response = await fetch(url);
         const data = await response.json();
         displayDetails(data.video);
@@ -97,7 +98,6 @@ const fetchDetails = async (url) => {
 
 const displayDetails = (details) => {
 
-    showLoader();
 
     const detailsContainer = document.getElementById("details-container");
 
