@@ -16,6 +16,8 @@ const getVideo = async () => {
 
 const displayVideos = (videos) => {
 
+    showLoader();
+
     // fetch the grid container
     const gridContainer = document.getElementById("grid-container");
     gridContainer.innerHTML = "";
@@ -52,23 +54,78 @@ const displayVideos = (videos) => {
                             <p class="font-inter text-sm text-left text-[#171717] opacity-70">${video.authors[0].profile_name}</p>
 
                             <!-- verified icon -->
-                            <img src="assets/verified icon.png" alt="">
+                            ${video.authors[0].verified == true ? `<img src="assets/verified icon.png" alt=""></img>` : ``}
 
                         </div>
 
                         <!-- view section -->
                         <p class="font-inter text-sm text-left text-[#171717] opacity-70 mt-2">${video.others.views} views</p>
                     </div>
+
+                    
+
                 </div>
+                <button onclick="showDetails('${video.video_id}'); video_details.showModal();" class="btn btn-wide w-full mt-2">Show Details</button>
         `
 
         gridContainer.appendChild(gridVideo)
     }
+
+    hideLoader();
 }
 
 document.getElementById("all").addEventListener("click", () => {
     getVideo();
 })
+
+
+const showDetails = (id) => {
+    const url = `https://openapi.programming-hero.com/api/phero-tube/video/${id}`;
+    fetchDetails(url)
+}
+
+const fetchDetails = async (url) => {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayDetails(data.video);
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
+
+const displayDetails = (details) => {
+
+    showLoader();
+
+    const detailsContainer = document.getElementById("details-container");
+
+    detailsContainer.innerHTML = `
+                    <div class="card bg-base-100 image-full w-full shadow-sm">
+                    <figure>
+                      <img
+                        src= ${details.thumbnail};
+                        alt="Shoes" />
+                    </figure>
+
+
+                    <div class="card-body">
+                      <h2 class="card-title">${details.title}</h2>
+                      <p>${details.description}</p>
+                      <div class="card-actions justify-end">
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn mt-2">Close</button>
+                </form>
+    `
+    hideLoader();
+}
 
 
 

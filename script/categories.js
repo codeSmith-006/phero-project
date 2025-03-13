@@ -1,8 +1,22 @@
+// loader script
+
+const showLoader = () => {
+    document.getElementById("loader").classList.remove("hidden");
+    document.getElementById("grid-container").classList.add("hidden");
+}
+
+const hideLoader = () => {
+    document.getElementById("loader").classList.add("hidden");
+    document.getElementById("grid-container").classList.remove("hidden");
+}
+
+
 // fetching the buttons
 const getButton = async () => {
     try {
 
         // fetching the api
+        showLoader()
         const response = await fetch("https://openapi.programming-hero.com/api/phero-tube/categories");
 
         const data = await response.json()
@@ -53,6 +67,8 @@ const displayCategory = (categories) => {
             event.target.classList.add("active")
         }
     })
+
+    hideLoader();
 
 }
 

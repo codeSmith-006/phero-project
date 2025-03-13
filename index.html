@@ -58,14 +58,22 @@
                 <!-- logo section -->
                 <img src="assets/Logo.png" alt="">
 
+                <!-- search section -->
+                <label class="input">
+                    <svg class="h-[1em]  opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                            stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input id="search-box" type="search" required placeholder="Search" />
+                </label>
+
                 <!-- sort button -->
                 <button
                     class="font-inter font-medium text-left text-[252525] text-lg px-5 py-2 bg-btnAsh rounded btn hover:text-black">Sort
                     by view</button>
-
-                <!-- blog button -->
-                <button
-                    class="font-inter text-lg text-white text-left font-medium px-5 py-2 bg-btnRed rounded btn hover:text-black">Blog</button>
             </div>
         </nav>
 
@@ -88,18 +96,60 @@
     <!-- main section / load video section -->
     <main class="container mx-auto mt-10">
 
+        <!-- loader section -->
+        <section class="flex items-center justify-center">
+            <span id="loader" class="loading loading-spinner text-accent text-center p-10"></span>
+        </section>
+
         <div id="no-content" class="flex flex-col items-center gap-8 mt-48 justify-center">
             <img src="assets/Icon.png" alt="">
 
-            <h1 class="font-inter font-bold text-3xl leading-[44px] text-center">Oops!! Sorry, There is no <br> content here</h1>
+            <h1 class="font-inter font-bold text-3xl leading-[44px] text-center">Oops!! Sorry, There is no <br> content
+                here</h1>
         </div>
 
+
+
+
         <!-- main content / video content with grid container -->
-        <div id="grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-between">
+        <div id="grid-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-between">
 
 
         </div>
     </main>
+
+    <!-- modal section -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="video_details" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+
+            <!-- main video details container -->
+            <div id="details-container">
+                <div class="card bg-base-100 image-full w-full shadow-sm">
+                    <figure>
+                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                            alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Card Title</h2>
+                        <p>A card component has a figure, a body part, and inside body there are title and actions parts
+                        </p>
+                        <div class="card-actions justify-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+            </form>
+        </div>
+        </div>
+    </dialog>
 
     <!-- script files -->
 
@@ -110,7 +160,7 @@
     <script src="script/fetchVideo.js"></script>
 
     <!-- fetchByCate file -->
-     <script src="script/fetchByCate.js"></script>
+    <script src="script/fetchByCate.js"></script>
 </body>
 
 </html>
