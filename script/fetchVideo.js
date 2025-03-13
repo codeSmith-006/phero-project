@@ -121,7 +121,6 @@ const displayDetails = (details) => {
 
                                   <form method="dialog">
                     <!-- if there is a button in form, it will close the modal -->
-                    <button class="btn mt-2">Close</button>
                 </form>
     `
     hideLoader();
